@@ -1,0 +1,45 @@
+<h1>Senarai Tugasan</h1>
+<style>
+body
+{
+background-color: grey;
+}
+h1
+{
+color:black;
+font-family:"Jokerman";
+}
+p
+{
+font-size:20px;
+color:white;
+}
+
+</style>
+
+<table  border="1">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.state %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<a href="\users">Link 2 user </a>
+<%=link_to "Link ke Users menggunakan link_to" ,users_path %>
+<br>
+
+<%= link_to 'New Task', new_task_path %>
