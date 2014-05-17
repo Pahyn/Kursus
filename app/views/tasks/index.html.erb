@@ -2,12 +2,13 @@
 <style>
 body
 {
-background-color: grey;
+background-color: white;
 }
 h1
 {
 color:black;
 font-family:"Jokerman";
+text-align: center;
 }
 p
 {
@@ -17,12 +18,29 @@ color:white;
 
 </style>
 
-<table  border="1">
+<div id="top" align="center">
+  <table width="50%">
+    <tr><td bgcolor="black" align="center"></td></tr>
+<tr><a href="\tasks">Task</a></tr>
+<a href="\users">User</a>
+<%=link_to "Link ke Users menggunakan link_to   " ,users_path %>
+<a href="\foodstalls">FoodStall    </a>
+</td>
+</tr>
+<table>
+<br>
+
+</div>
+
+<table  border="1" width="50%" align=center>
   <thead>
     <tr>
+      <td valign="top" align=center>
+        <b>Menu</b>
       <th>Title</th>
       <th>State</th>
       <th colspan="3"></th>
+      </td>
     </tr>
   </thead>
 
@@ -38,8 +56,5 @@ color:white;
     <% end %>
   </tbody>
 </table>
-<a href="\users">Link 2 user </a>
-<%=link_to "Link ke Users menggunakan link_to" ,users_path %>
-<br>
 
 <%= link_to 'New Task', new_task_path %>
